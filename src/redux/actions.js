@@ -55,7 +55,7 @@ export const loadUsers = () => {
         .get(`${process.env.REACT_APP_API}`)
         .then((resp) => {
             console.log("resp", resp)
-            dispatch(getUsers(resp.data));
+            dispatch(getUsers(resp.data.user));
         })
         .catch((error) => console.log(error));
     };
