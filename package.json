@@ -1,7 +1,7 @@
 {
-  "homepage": "https://Saytarou.github.io/pf-test",
   "name": "pf-test",
   "version": "0.1.0",
+  "homepage":"https://saytarou.github.io/pf-test/",
   "private": true,
   "dependencies": {
     "@date-io/date-fns": "^2.16.0",
