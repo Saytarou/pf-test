@@ -56,7 +56,7 @@ const Home = () => {
   const buttonStyles = useButtonStyle();
   let dispatch = useDispatch();
   const navigate = useNavigate();
-  const {users} = useSelector(state => state.data);
+  const users = useSelector(state => state.data.users);
 
   useEffect(() => {
     dispatch(loadUsers());
@@ -147,7 +147,7 @@ const Home = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {users && users.map((user) => (
+            {users.length > 0 && users.map((user) => (
               <StyledTableRow key={user.id}>
                 <StyledTableCell component="th" scope="row">
                   {user.name}
