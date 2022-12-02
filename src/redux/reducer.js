@@ -32,17 +32,17 @@ const usersReducers = (state = initialState, action) => {
         case types.SORT_USERS_DESC:
             return {
                 ...state,
-                users: state.users.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()))
+                users: [...state.users].sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()))
             }
         case types.SORT_USERS_ASC:
             return {
                 ...state,
-                users: state.users.sort((a, b) => b.name.toLowerCase().localeCompare(a.name.toLowerCase()))
+                users: [...state.users].sort((a, b) => b.name.toLowerCase().localeCompare(a.name.toLowerCase()))
             }
         case types.SORT_DATE_DESC:
             return {
                 ...state,
-                users: state.users.sort((a, b) => {
+                users: [...state.users].sort((a, b) => {
                     const [aDay, aMonth, aYear] = a.birthday.split('.')
                     const [bDay, bMonth, bYear] = b.birthday.split('.')
                     const aDate = toDate(new Date(aYear, Number(aMonth - 1), aDay))
@@ -53,7 +53,7 @@ const usersReducers = (state = initialState, action) => {
         case types.SORT_DATE_ASC:
             return {
                 ...state,
-                users: state.users.sort((a, b) => {
+                users: [...state.users].sort((a, b) => {
                     const [aDay, aMonth, aYear] = a.birthday.split('.')
                     const [bDay, bMonth, bYear] = b.birthday.split('.')
                     const aDate = toDate(new Date(aYear, Number(aMonth - 1), aDay))
