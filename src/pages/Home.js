@@ -56,7 +56,7 @@ const Home = () => {
   const buttonStyles = useButtonStyle();
   let dispatch = useDispatch();
   const navigate = useNavigate();
-  const users = useSelector(state => state.data.users);
+  const users = useSelector(state => state.data.user);
 
   useEffect(() => {
     dispatch(loadUsers());
