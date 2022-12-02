@@ -52,7 +52,7 @@ export const filterUsersByStatus = (isArchive) => ({
 export const loadUsers = () => {
     return function (dispatch) {
         axios
-        .get('https://my-json-server.typicode.com/saytarou/pf-test/db')
+        .get(`${process.env.REACT_APP_API}`)
         .then((resp) => {
             console.log("resp", resp)
             dispatch(getUsers(resp.data));
